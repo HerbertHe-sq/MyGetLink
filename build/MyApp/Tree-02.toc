@@ -1,0 +1,5 @@
+('e:\\studysoftware\\python\\python37-32\\lib\\site-packages\\six-1.12.0-py3.7.egg',
+ None,
+ {'*.pyw', '*.pyc', 'EGG-INFO', '*.py', '*.cp37-win32.pyd', '*.pyd'},
+ 'DATA',
+ [])
