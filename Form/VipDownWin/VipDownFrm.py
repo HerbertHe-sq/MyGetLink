@@ -272,7 +272,12 @@ class VDownWindow(QtWidgets.QMainWindow, Ui_VDownWindow):
                 self.v_base_head =base64.b64decode(key_url.replace('base64,',''))
                 self.aesFlag = 2
             elif key_url!='':    #获取AES秘钥
-                self.aesKey = read_m3u8.GetAesKey(os.path.dirname(list)+'/'+key_url)
+                if '/hls/key.key' in key_url:
+                    url_key_t = os.path.dirname(key_url)
+                    url_key_t = os.path.dirname(list).replace(url_key_t,'')
+                    self.aesKey = read_m3u8.GetAesKey(url_key_t + '/' + key_url)
+                else:
+                    self.aesKey = read_m3u8.GetAesKey(os.path.dirname(list)+'/'+key_url)
                 self.aesFlag = 1
             else:
                 self.aesKey = ''
@@ -304,7 +309,12 @@ class VDownWindow(QtWidgets.QMainWindow, Ui_VDownWindow):
                 self.v_base_head = base64.b64decode(key_url.replace('base64,', ''))
                 self.aesFlag = 2
             elif key_url != '':  # 获取AES秘钥
-                self.aesKey = read_m3u8.GetAesKey(os.path.dirname(list['FileLink'])+'/'+key_url)
+                if '/hls/key.key' in key_url:
+                    url_key_t = os.path.dirname(key_url)
+                    url_key_t = os.path.dirname(list).replace(url_key_t, '')
+                    self.aesKey = read_m3u8.GetAesKey(url_key_t + '/' + key_url)
+                else:
+                    self.aesKey = read_m3u8.GetAesKey(os.path.dirname(list) + '/' + key_url)
                 self.aesFlag = 1
             else:
                 self.aesKey = ''
