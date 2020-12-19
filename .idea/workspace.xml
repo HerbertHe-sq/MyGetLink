@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9a20ae-cead-4fc3-a101-1436a301e0b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Function/CommonEng/GetLinkGj.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/VipDownWin/VipDownFrm.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/VipDownWin/VipDownFrm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainFrm.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainFrm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SetInit.ini" beforeDir="false" afterPath="$PROJECT_DIR$/SetInit.ini" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +177,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

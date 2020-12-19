@@ -27,6 +27,7 @@ from Function.CommonEng.GetLinkFfhk import GetLinkFfhk
 from Function.CommonEng.GetLinkWlxf import GetLinkWlxf
 from Function.CommonEng.GetLinkNfMov import GetLinkNfMov
 from Function.CommonEng.GetLinkPiaoHua import GetLinkPiaoHua
+from Function.CommonEng.GetLinkGj import GetLinkGj
 from Function.HdEng.GetLinkHdHq import GetLinkHdHq
 from Function.HdEng.GetLinkIqiyi import GetLinkIqiyi
 from Function.HdEng.GetLinkTenv import GetLinkTenv
@@ -455,6 +456,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.myGetLinkPiaoHua = GetLinkPiaoHua()
         self.myGetLinkPiaoHua.SetBaseUrl(self.gobalUrlArr[36])
 
+        self.myGetLinkGj = GetLinkGj()
+        self.myGetLinkGj.SetBaseUrl(self.gobalUrlArr[39])
+        self.myGetLinkGj.SetSearchUrl(self.gobalUrlArr[38])
+
         #建立TV对象
         self.myGetLinkLiveSs = GetLinkLiveSS()
         self.myGetLinkLiveSs.SetBaseSeaUrl(self.gobalUrlArr[12])
@@ -493,6 +498,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.myGetLinkTenv = GetLinkTenv()
         self.myGetLinkTenv.SetBaseUrl(self.gobalUrlArr[31])
+
 
     # 键盘某个键被按下时调用
     def keyPressEvent(self, qKeyEvent):
@@ -827,6 +833,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.qList.append(link_str)
             self.signal_list.emit()  # UpdateListView
             self.statusbar.showMessage('Resource Count:' + str(len(self.allLink)))
+        elif self.cboFind.currentIndex()==14:
+            self.allLink = self.myGetLinkGj.SearchMasterKey(taget_name)
+            self.qList.clear()
+            for i in range(0, len(self.allLink)):
+                link_str = self.allLink[i]['MovName']
+                self.qList.append(link_str)
+            self.signal_list.emit()  # UpdateListView
+            self.statusbar.showMessage('Resource Count:' + str(len(self.allLink)))
         else:
             self.statusbar.showMessage('Resource Count:NULL')
 
@@ -965,6 +979,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 img = self.myGetLinkPiaoHua.DownMovPicture(self.allLink[self.qmodelRowIndex]['MovImg'])
                 self.UpdateMovPicture(img, 1)
                 self.statusbar.showMessage('Resource Count:' + str(len(link)))
+            elif self.cboFind.currentIndex()==14:
+                self.signal2.emit("")
+                dict_data = self.allLink[self.qmodelRowIndex]
+                link = self.myGetLinkGj.SearchLink(dict_data)
+                temp_str = ""
             else:
                 self.statusbar.showMessage('Resource Count:NULL')
 
