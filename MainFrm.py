@@ -984,6 +984,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 dict_data = self.allLink[self.qmodelRowIndex]
                 link = self.myGetLinkGj.SearchLink(dict_data)
                 temp_str = ""
+                for item in link:
+                    temp_str += item['Title'] + '\r\n' + item['PlayLink'] + '\r\n\r\n'
+                self.signal2.emit(temp_str)
+                img = self.myGetLinkGj.DownMovPicture(self.allLink[self.qmodelRowIndex]['MovImg'])
+                self.UpdateMovPicture(img, 1)
+                self.statusbar.showMessage('Resource Count:' + str(len(link)))
             else:
                 self.statusbar.showMessage('Resource Count:NULL')
 

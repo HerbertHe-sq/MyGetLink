@@ -34,6 +34,7 @@ class GetLinkGj:
         return all_list
 
     def SearchLink(self,dict_temp):
+        all_list = []
         url = dict_temp['MovLink']
         req = requests.get(url=url)
         req.encoding='utf-8'
@@ -60,10 +61,12 @@ class GetLinkGj:
                     list_dict_t.append(dict_item_t)
             list_t.append(list_dict_t)
         for item in list_t:
-            self._GetM3U8Link(item[0])
+            #取首个地址
+            self._GetM3U8Link(item[0],all_list)
+        return all_list
 
 
-    def _GetM3U8Link(self,dict_temp):
+    def _GetM3U8Link(self,dict_temp,all_link):
         url = self._baseUrl+'/ass.php'
         data = {
             'url':'dp',
@@ -76,10 +79,26 @@ class GetLinkGj:
         req = requests.get(url=url,params=data)
         js_ele = re.findall('\((.*?)\)',req.text,re.I|re.S)[0]
         json_t = json.loads(js_ele)
-        print(json_t)
+
+        js_count = json_t['s']['num']
+        for item in range(0,js_count):
+            mov_title = str(item+1)
+            link = json_t['s']['video'][item]
+            if link != None:
+                dict_play = {
+                    'Title': mov_title,
+                    'PlayLink': link
+                }
+                all_link.append(dict_play)
+
 
 
     # 获取13位时间戳
     def _GetUtcTime(self):
         time_stamp = int(time.time() * 1000)
         return time_stamp
+
+    # 获取图片
+    def DownMovPicture(self, link):
+        img = requests.get(url=link).content
+        return img
