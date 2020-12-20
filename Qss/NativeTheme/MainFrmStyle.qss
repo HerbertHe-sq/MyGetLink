@@ -18,6 +18,10 @@ QMainWindow[name="VipConvertFrm"]{
     background-color:#FFF0F0F0;
 }
 
+QMainWindow[name="QdmfConvertFrm"]{
+    background-color:#FFF0F0F0;
+}
+
 QPushButton[name="btnGetLink"]{
     border-radius:5px;
 	height:22px;

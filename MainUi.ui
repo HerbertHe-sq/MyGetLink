@@ -465,6 +465,7 @@
     <addaction name="actionDownload_Bt"/>
     <addaction name="actionSetting"/>
     <addaction name="actionBatch_Rename"/>
+    <addaction name="actionQDMF_To_TV_List"/>
    </widget>
    <widget class="QMenu" name="menuConverter">
     <property name="title">
@@ -604,6 +605,11 @@
   <action name="actionNative_Theme">
    <property name="text">
     <string>Native Theme</string>
+   </property>
+  </action>
+  <action name="actionQDMF_To_TV_List">
+   <property name="text">
+    <string>QDMF To TV List</string>
    </property>
   </action>
  </widget>

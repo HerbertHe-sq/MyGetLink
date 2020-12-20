@@ -49,6 +49,7 @@ from Form.VipConWin.VipConvertFrm import VConvertWindow
 from Form.VipDownWin.VipDownFrm import VDownWindow
 from Form.BatchDownWin.BatchDownFrm import BatchDownWindow
 from Form.BatchRenameWin.BatchRenameFrm import BatchRenameWindow
+from Form.QdmfConvertWin.QdmfConvertFrm import QdmfConvertWindow
 from Function.ApplicationList import AppList
 from Function.QssHelper import QssHelper
 
@@ -141,7 +142,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.hide()
             self.CloseForm(0, 0)
 
-
     def ShowWindow(self):
         self.show()
 
@@ -197,7 +197,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def CloseForm(self,index,flag):
         try:
-            for i in range(index,8):
+            for i in range(index,9):
                 if i==0:
                     if flag==0:
                         self.aboutWin.hide()
@@ -248,6 +248,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         else:
                             self.downWinArr[a_i].showNormal()
                             self.downWinArr[a_i].activateWindow()
+                elif i==8:
+                    if flag == 0:
+                        self.qdmfConWin.hide()
+                    else:
+                        self.qdmfConWin.showNormal()
+                        self.qdmfConWin.activateWindow()
                 else:
                     pass
         except Exception as msg:
@@ -285,6 +291,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionLanguage3.triggered.connect(lambda: self.MenuLangChange(3))
         self.actionNative_Theme.triggered.connect(lambda: self.MenuTheme_Click(1))
         self.actionDark_Theme.triggered.connect(lambda: self.MenuTheme_Click(2))
+        self.actionQDMF_To_TV_List.triggered.connect(self.MenuQDMFToFile_Click)
         #self.txtMsgHd.grabKeyboard()
 
      #绑定信号
@@ -1328,6 +1335,18 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.listBtRowIndex = qModelIndex.row()
         self.getLinkFlag = 10
         self.statusbar.showMessage('Finding...')
+
+    #文件转换
+    def MenuQDMFToFile_Click(self):
+        theme = int(self.setIniFile.GetIniValue('System', 'theme'))
+        theme_str = 'NativeTheme'
+        if theme == 1:
+            theme_str = 'NativeTheme'
+        else:
+            theme_str = 'NightTheme'
+        self.qdmfConWin = QdmfConvertWindow(theme_str)
+        self.qdmfConWin.ShowWindows()
+        self.qdmfConWin.retranslateUi(self.qdmfConWin)
 
     #打开迅雷下载
     def MenuOpenAppClick(self):
