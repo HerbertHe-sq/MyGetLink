@@ -547,5 +547,30 @@
         <source>Select File</source>
         <translation>選擇文檔</translation>
     </message>
+	<message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="62"/>
+        <source>Convert Type</source>
+        <translation>轉換類型</translation>
+    </message>
+    <message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="63"/>
+        <source>To QDMF</source>
+        <translation>轉換為QDMF文件</translation>
+    </message>
+    <message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="64"/>
+        <source>To Tv File</source>
+        <translation>轉換為電視文件</translation>
+    </message>
+    <message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="65"/>
+        <source>Base Address</source>
+        <translation>基地址</translation>
+    </message>
+    <message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="66"/>
+        <source>Add Base Address</source>
+        <translation>加入基地址</translation>
+    </message>
 </context>
 </TS>

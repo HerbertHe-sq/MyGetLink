@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>470</width>
-    <height>130</height>
+    <height>151</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,7 +47,7 @@
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>50</y>
+      <y>90</y>
       <width>85</width>
       <height>23</height>
      </rect>
@@ -59,8 +59,8 @@
    <widget class="QPushButton" name="btnSelPath">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>50</y>
+      <x>370</x>
+      <y>60</y>
       <width>85</width>
       <height>23</height>
      </rect>
@@ -68,6 +68,84 @@
     <property name="text">
      <string>Select File</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Convert Type</string>
+    </property>
+    <widget class="QRadioButton" name="rbToQdmf">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>To QDMF</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbToTvFile">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>To Tv File</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>50</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Base Address</string>
+    </property>
+    <widget class="QCheckBox" name="cbAddAddr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add Base Address</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="cbFfmpeg">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>FFmpeg</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

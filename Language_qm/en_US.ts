@@ -547,5 +547,30 @@
         <source>Select File</source>
         <translation>Select File</translation>
     </message>
+	<message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="62"/>
+        <source>Convert Type</source>
+        <translation>Convert Type</translation>
+    </message>
+    <message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="63"/>
+        <source>To QDMF</source>
+        <translation>To QDMF</translation>
+    </message>
+    <message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="64"/>
+        <source>To Tv File</source>
+        <translation>To Tv File</translation>
+    </message>
+    <message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="65"/>
+        <source>Base Address</source>
+        <translation>Base Address</translation>
+    </message>
+    <message>
+        <location filename="Form/QdmfConvertWin/QdmfConvertUi.py" line="66"/>
+        <source>Add Base Address</source>
+        <translation>Add Base Address</translation>
+    </message>
 </context>
 </TS>
