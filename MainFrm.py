@@ -31,6 +31,7 @@ from Function.CommonEng.GetLinkGj import GetLinkGj
 from Function.HdEng.GetLinkHdHq import GetLinkHdHq
 from Function.HdEng.GetLinkIqiyi import GetLinkIqiyi
 from Function.HdEng.GetLinkTenv import GetLinkTenv
+from Function.HdEng.GetLinkYouku import GetLinkYouku
 from Function.TvEng.GetLinkLiveSS import GetLinkLiveSS
 from Function.TvEng.GetLinkLiveLS import GetLinkLiveLS
 from Function.TvEng.GetLinkLiveIVI import GetLinkLiveIVI
@@ -52,6 +53,7 @@ from Form.BatchRenameWin.BatchRenameFrm import BatchRenameWindow
 from Form.QdmfConvertWin.QdmfConvertFrm import QdmfConvertWindow
 from Function.ApplicationList import AppList
 from Function.QssHelper import QssHelper
+from Function.Url_Function_t import UrlFunction_t
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     signal = QtCore.pyqtSignal(str)     #txtMsg.append()
@@ -425,86 +427,90 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.myGetLink = GetLink()
 
         self.myGetLinkSec = GetLinkSec()
-        self.myGetLinkSec.SetBaseUrl(self.gobalUrlArr[2])
+        self.myGetLinkSec.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_BUBULAI_BOOT.value])
 
         self.myGetLinkBt = GetLinkBt()
-        self.myGetLinkBt.SetBaseUrl(self.gobalUrlArr[3])
+        self.myGetLinkBt.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_SOBT_BOOT.value])
 
         self.myGetLinkPan = GetLinkPan()
-        self.myGetLinkPan.SetBaseUrl(self.gobalUrlArr[4])
+        self.myGetLinkPan.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_PANSOU_BOOT.value])
 
         self.myGetLinkDy = GetLinkDy()
-        self.myGetLinkDy.SetBaseUrl(self.gobalUrlArr[5])
+        self.myGetLinkDy.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_993DY_SERACH.value])
 
         self.myGetLinkPanSo = GetLinkPanSo()
-        self.myGetLinkPanSo.SetBaseUrl(self.gobalUrlArr[6])
+        self.myGetLinkPanSo.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_PANSOSO_SEARCH.value])
 
         self.myGetLinkEs = GetLinkEs()
-        self.myGetLinkEs.SetBaseUrl(self.gobalUrlArr[7])
-        self.myGetLinkEs.SetEleUrl(self.gobalUrlArr[8])
+        self.myGetLinkEs.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_Y80S_SERACH.value])
+        self.myGetLinkEs.SetEleUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_Y80S_BOOT.value])
 
         self.myGetLinkfNet = GetLinkfNet()
-        self.myGetLinkfNet.SetBaseUrl(self.gobalUrlArr[9])
+        self.myGetLinkfNet.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_415_BOOT.value])
 
         self.myGetLinkXplay = GetLinkXplay()
-        self.myGetLinkXplay.SetBaseUrl(self.gobalUrlArr[10])
+        self.myGetLinkXplay.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_22TU_SERACH.value])
 
         self.myGetLinkHdHq = GetLinkHdHq()
-        self.myGetLinkHdHq.SetBaseUrl(self.gobalUrlArr[11])
+        self.myGetLinkHdHq.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_GAOQING_SEARCH.value])
 
         self.myGetLinkFfhk = GetLinkFfhk()
-        self.myGetLinkFfhk.SetBaseUrl(self.gobalUrlArr[20])
+        self.myGetLinkFfhk.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_55HK_BOOT.value])
 
         self.myGetLinkWlxf = GetLinkWlxf()
 
         self.myGetLinkNfMov = GetLinkNfMov()
-        self.myGetLinkNfMov.SetBaseUrl(self.gobalUrlArr[35])
+        self.myGetLinkNfMov.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_NFMOVIE_BOOT.value])
 
         self.myGetLinkPiaoHua = GetLinkPiaoHua()
-        self.myGetLinkPiaoHua.SetBaseUrl(self.gobalUrlArr[36])
+        self.myGetLinkPiaoHua.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_PIAOHUA_BOOT.value])
 
         self.myGetLinkGj = GetLinkGj()
-        self.myGetLinkGj.SetBaseUrl(self.gobalUrlArr[39])
-        self.myGetLinkGj.SetSearchUrl(self.gobalUrlArr[38])
+        self.myGetLinkGj.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_GANGJU_BOOT.value])
+        self.myGetLinkGj.SetSearchUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_GANGJU_SEARCH.value])
 
         #建立TV对象
         self.myGetLinkLiveSs = GetLinkLiveSS()
-        self.myGetLinkLiveSs.SetBaseSeaUrl(self.gobalUrlArr[12])
-        self.myGetLinkLiveSs.SetBaseUrl(self.gobalUrlArr[13])
+        self.myGetLinkLiveSs.SetBaseSeaUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_66TV_SEARCH.value])
+        self.myGetLinkLiveSs.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_66TV_BOOT.value])
 
         self.myGetLinkLiveLs = GetLinkLiveLS()
-        self.myGetLinkLiveLs.SetBaseSeaUrl(self.gobalUrlArr[14])
-        self.myGetLinkLiveLs.SetBaseUrl(self.gobalUrlArr[15])
-        self.myGetLinkLiveLs.SetSigUrl(self.gobalUrlArr[16])
+        self.myGetLinkLiveLs.SetBaseSeaUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_LESTV_SEARCH.value])
+        self.myGetLinkLiveLs.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_LESTV_BOOT.value])
+        self.myGetLinkLiveLs.SetSigUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_MUKGU_BOOT.value])
 
         self.myGetLinkLiveIVI = GetLinkLiveIVI()
-        self.myGetLinkLiveIVI.SetBaseUrl(self.gobalUrlArr[19])
+        self.myGetLinkLiveIVI.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_IVI_BOOT.value])
 
         self.myGetLinkLiveOtop = GetLinkLiveOtop()
-        self.myGetLinkLiveOtop.SetBaseUrl(self.gobalUrlArr[22])
+        self.myGetLinkLiveOtop.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_OWTOP_BOOT.value])
 
         self.myGetLinkLiveQhtv = GetLinkLiveQhtv()
-        self.myGetLinkLiveQhtv.SetBaseUrl(self.gobalUrlArr[23])
+        self.myGetLinkLiveQhtv.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_DSZBDQ_BOOT.value])
 
         self.myGetLinkLiveYsou = GetLinkLiveYsou()
-        self.myGetLinkLiveYsou.SetBaseUrl(self.gobalUrlArr[24])
+        self.myGetLinkLiveYsou.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_YUNSOSO_BOOT.value])
 
         self.myGetLinkTvEye = GetLinkTvEye()
-        self.myGetLinkTvEye.SetBaseUrl(self.gobalUrlArr[27])
+        self.myGetLinkTvEye.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_LTOSS_BOOT.value])
 
         #建立BT对象
         self.myGetLinkZZS= GetLinkZZS()
-        self.myGetLinkZZS.SetBaseUrl(self.gobalUrlArr[17])
+        self.myGetLinkZZS.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_ZHONGZI8_BOOT.value])
 
         self.myGetLinkBtMov = GetLinkBtMov()
-        self.myGetLinkBtMov.SetBaseUrl(self.gobalUrlArr[32])
-        self.myGetLinkBtMov.SetRootUrl(self.gobalUrlArr[33])
+        self.myGetLinkBtMov.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_BTMOVI_SEARCH.value])
+        self.myGetLinkBtMov.SetRootUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_BTMOVI_BOOT.value])
 
         self.myGetLinkIqiyi = GetLinkIqiyi()
-        self.myGetLinkIqiyi.SetBaseUrl(self.gobalUrlArr[26])
+        self.myGetLinkIqiyi.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_IQIYI_SEARCH.value])
 
         self.myGetLinkTenv = GetLinkTenv()
-        self.myGetLinkTenv.SetBaseUrl(self.gobalUrlArr[31])
+        self.myGetLinkTenv.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_VQQ_BOOT.value])
+
+        self.myGetLinkYouku = GetLinkYouku()
+        self.myGetLinkYouku.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_YOUKU_BOOT.value])
+        self.myGetLinkYouku.SetSearchUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_YOUKU_SEARCH.value])
 
 
     # 键盘某个键被按下时调用
@@ -624,7 +630,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     #HD Engine Cbo
     def CboHdIndexChanged(self,index):
-        if (index >=0) and (index<3):
+        if (index >=0) and (index<4):
             self.searchNumHd = index+1
             self.setIniFile.SetIniValue('System', 'searchnumhd', str(self.searchNumHd))
 
@@ -715,7 +721,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         #选择搜索引擎
         if self.cboFind.currentIndex()==0:
-            self.allLink,self.allLinkTitle = self.myGetLink.SearchMasterKey(taget_name,self.gobalUrlArr[1])
+            self.allLink,self.allLinkTitle = self.myGetLink.SearchMasterKey(taget_name,self.gobalUrlArr[UrlFunction_t.URL_FUNC_LOLYTT_SEARCH.value])
         else:
             self.allLink,self.allLinkTitle = self.myGetLinkSec.SearchKey(taget_name)
 
@@ -735,7 +741,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.signal_list.emit()#UpdateListView
 
         if self.cboFind.currentIndex()==0:
-            list_link,img = self.myGetLink.SearchKey(self.gobalUrlArr[0],taget,taget_name)
+            list_link,img = self.myGetLink.SearchKey(self.gobalUrlArr[UrlFunction_t.URL_FUNC_LOLYTT_BOOT.value],taget,taget_name)
             self.signal2.emit("")
             self.ShowUrl(list_link)
             self.UpdateMovPicture(img,1)
@@ -813,10 +819,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.statusbar.showMessage('Resource Count:' + str(len(self.allLink)))
         elif self.cboFind.currentIndex()==10 or self.cboFind.currentIndex()==11:
             if self.cboFind.currentIndex()==10:
-                self.myGetLinkWlxf.SetBaseUrl(self.gobalUrlArr[21])
+                self.myGetLinkWlxf.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_GDTV_WL_BOOT.value])
                 self.allLink = self.myGetLinkWlxf.SearchMasterKey()
             else:
-                self.myGetLinkWlxf.SetBaseUrl(self.gobalUrlArr[34])
+                self.myGetLinkWlxf.SetBaseUrl(self.gobalUrlArr[UrlFunction_t.URL_FUNC_GDTV_QS_BOOT.value])
                 self.allLink = self.myGetLinkWlxf.SearchMasterKey()
             self.qList.clear()
             for i in range(0, len(self.allLink)):
@@ -1024,6 +1030,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.qListHd.append(self.allLinkHd[i]['Title'])
                 self.signal_list_hd.emit()  # UpdateListView
                 self.statusbar.showMessage('Resource Count:' + str(len(self.allLinkHd)))
+            elif self.cboHdEngine.currentIndex()==3:
+                self.allLinkHd = self.myGetLinkYouku.SearchMasterKey(master_key)
+                self.qListHd.clear()
             else:
                 self.statusbar.showMessage('Resource Count:NULL')
         else:
