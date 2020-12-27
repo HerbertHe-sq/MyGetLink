@@ -43,7 +43,7 @@ class QdmfConvertWindow(QtWidgets.QMainWindow, Ui_QdmfConvertWin):
 
     def BtnSelPath_Click(self):
         if self.rbToQdmf.isChecked()!=True:
-            filename_filter = "QDF文件|*.qdf|QDMF文件|*.qdmf||"
+            filename_filter = "QDF文件|*.qdf|QDMF文件|*.qdmf|JSON文件|*.json||"
             tip_str = 'Please select the qdf file'
         else:
             filename_filter = "TXT文件|*.txt||"
@@ -57,25 +57,38 @@ class QdmfConvertWindow(QtWidgets.QMainWindow, Ui_QdmfConvertWin):
             with open(file_path, 'r', encoding='utf-8') as f_read:
                 if self.rbToQdmf.isChecked()!=True:
                     js_ele = json.loads(f_read.read())
-                    count = int(js_ele['ItemCount'])
+                    if extension_name=='.json':
+                        list_dat_t = js_ele['list']
+                        for item in list_dat_t:
+                            js_ele_t = json.loads(item['data'])
+                            js_ele_video = json.loads(js_ele_t['videoUrl'])
+                            dict_link = {
+                                'FileName': js_ele_t['title'],
+                                'FileLink': js_ele_video['hd'],
+                                'BaseLink': '',
+                                'CombMode': ''  # 合成模式
+                            }
+                            self.allLink.append(dict_link)
+                    else:
+                        count = int(js_ele['ItemCount'])
 
-                    self.allLink.clear()
-                    for i in range(0, count):
-                        if extension_name == '.qdf':  # 兼容旧格式.qdf不存在合并模式
-                            dict_link = {
-                                'FileName': js_ele['Item'][i]['FileName'],
-                                'FileLink': js_ele['Item'][i]['FileLink'],
-                                'BaseLink': js_ele['Item'][i]['BaseLink'],
-                                'CombMode': 'NULL'
-                            }
-                        else:
-                            dict_link = {
-                                'FileName': js_ele['Item'][i]['FileName'],
-                                'FileLink': js_ele['Item'][i]['FileLink'],
-                                'BaseLink': js_ele['Item'][i]['BaseLink'],
-                                'CombMode': js_ele['Item'][i]['CombMode']  # 合成模式
-                            }
-                        self.allLink.append(dict_link)
+                        self.allLink.clear()
+                        for i in range(0, count):
+                            if extension_name == '.qdf':  # 兼容旧格式.qdf不存在合并模式
+                                dict_link = {
+                                    'FileName': js_ele['Item'][i]['FileName'],
+                                    'FileLink': js_ele['Item'][i]['FileLink'],
+                                    'BaseLink': js_ele['Item'][i]['BaseLink'],
+                                    'CombMode': 'NULL'
+                                }
+                            else:
+                                dict_link = {
+                                    'FileName': js_ele['Item'][i]['FileName'],
+                                    'FileLink': js_ele['Item'][i]['FileLink'],
+                                    'BaseLink': js_ele['Item'][i]['BaseLink'],
+                                    'CombMode': js_ele['Item'][i]['CombMode']  # 合成模式
+                                }
+                            self.allLink.append(dict_link)
 
                     self.statusBar.showMessage('Resource Count:' + str(len(self.allLink)))
                 else:
