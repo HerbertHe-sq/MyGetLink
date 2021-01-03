@@ -5,7 +5,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Form/QdmfConvertWin/QdmfConvertFrm.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/QdmfConvertWin/QdmfConvertFrm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Function/CommonEng/GetLinkWlxf.py" beforeDir="false" afterPath="$PROJECT_DIR$/Function/CommonEng/GetLinkWlxf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SetInit.ini" beforeDir="false" afterPath="$PROJECT_DIR$/SetInit.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/warn-MyApp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/warn-MyApp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/xref-MyApp.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/xref-MyApp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MyApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/MyApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/SetInit.ini" beforeDir="false" afterPath="$PROJECT_DIR$/dist/SetInit.ini" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

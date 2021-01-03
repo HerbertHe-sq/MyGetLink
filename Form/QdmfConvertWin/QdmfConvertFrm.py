@@ -36,6 +36,9 @@ class QdmfConvertWindow(QtWidgets.QMainWindow, Ui_QdmfConvertWin):
     def _SetControlProperty(self):
         self.setProperty('name', 'QdmfConvertFrm')
 
+    def closeEvent(self, event):
+        self.deleteLater()
+
     def _InitSetUp(self):
         self.allLink = []
         self.rbToQdmf.setChecked(True)

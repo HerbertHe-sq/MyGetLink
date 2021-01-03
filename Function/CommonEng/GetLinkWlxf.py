@@ -91,26 +91,28 @@ class GetLinkWlxf:
         headers={
             'Accept': 'application/json, text/plain, */*',
             'Accept-Encoding': 'gzip,deflate,br',
-            'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+            'Accept-Language': 'zh-CN,zh;q=0.9',
             'Connection': 'keep-alive',
             'Host': 'gdtv-api.gdtv.cn:7443',
             'Origin': 'https://www.gdtv.cn',
             'Referer': 'https://www.gdtv.cn/tvColumn/788',
             'X-ITOUCHTV-Ca-Key': '89541443007807288657755311869534',
-            'X-ITOUCHTV-Ca-Signature': '+8U4bNqXR3rZ8Eqfof2zSxGuZpX+dQpqY7cAzudsXOw=',
+            'X-ITOUCHTV-Ca-Signature': 'QReiFJs/NUVi4m9ptJrphczzmDDW5O/GuId09ZFU5+s=',
             'X-ITOUCHTV-Ca-Timestamp': str(self._GetUtcNowTime()),
             'X-ITOUCHTV-CLIENT': 'WEB_PC',
-            'X-ITOUCHTV-DEVICE-ID': 'WEB_cb0d72c0-4828-11eb-b87a-332435e7092b',
+            'X-ITOUCHTV-DEVICE-ID': 'WEB_c0a09980-4aa2-11eb-a7bc-9b905b11499b',
             'Content-Type':'application/json',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0'
+            'sec-fetch-mode':'cors',
+            'sec-fetch-site':'same-site',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
         }
 
         data={
             'pageSize': self._PAGE_SIZE,
             'tvColumnPk': self._TV_COLUMN_PK,
             'currentPage': 1,
-            'searchByTime': 'false'
-            #'beginScore': str(date_t)
+            'searchByTime': True,
+            'beginScore': str(date_t)
         }
 
         req = requests.get(url=url,headers=headers,params=data)
