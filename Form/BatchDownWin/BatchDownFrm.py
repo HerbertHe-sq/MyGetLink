@@ -83,6 +83,7 @@ class BatchDownWindow(QtWidgets.QMainWindow, Ui_BatDownWindow):
         self.saveFolderPath = ''  #保存路径
         self.qDownList = []
         self.allLink = []
+        self.saveQdmfPath = ''
         self.taskCountArr = ['1','2','3','4','5','6','7','8']
         self.fileNameIndex = 0
         self.txtSavePath.setReadOnly(True)
@@ -115,15 +116,16 @@ class BatchDownWindow(QtWidgets.QMainWindow, Ui_BatDownWindow):
         self.btnSelectPath.clicked.connect(self.BtnSelectPath_Click)
         self.btnAddLink.clicked.connect(self.BtnAddLink_Click)
         self.btnDownList.clicked.connect(self.BtnDownList_Click)
-        self.actionList_Save_As.triggered.connect(self.MenuSave_Click)
+        self.actionList_Save_As.triggered.connect(self.MenuSaveAs_Click)
         self.actionImport_List.triggered.connect(self.Menu_ImportList_Click)
+        self.actionSave.triggered.connect(self.MenuSave_Click)
         self.listView.clicked.connect(self.ListView_Click)
         self.listView.setSelectionMode(QAbstractItemView.ExtendedSelection)
 
         self.signal_list.connect(self.UpdateListView)
 
     #保存列表
-    def MenuSave_Click(self):
+    def MenuSaveAs_Click(self):
         list_save_dialog = QFileDialog()
         try:
             save_path = list_save_dialog.getSaveFileName(self, caption="Please select save directory", filter='File Type (*.qdmf)|*.qdmf|')[0]
@@ -148,6 +150,7 @@ class BatchDownWindow(QtWidgets.QMainWindow, Ui_BatDownWindow):
         dlg.SetOFNTitle("Please select the qdf file")
         if dlg.DoModal() == 1:
             file_path = dlg.GetPathName()
+            self.saveQdmfPath = file_path
             extension_name =  os.path.splitext(file_path)[1]
 
             with open(file_path,'r',encoding='utf-8') as f_read:
@@ -175,6 +178,31 @@ class BatchDownWindow(QtWidgets.QMainWindow, Ui_BatDownWindow):
                     self.allLink.append(dict_link)
             self.signal_list.emit()
             self.statusbar.showMessage('Resource Count:' + str(len(self.allLink)))
+
+    def MenuSave_Click(self):
+        save_path = ''
+        try:
+            if self.saveQdmfPath=='':
+                list_save_dialog = QFileDialog()
+                save_path = list_save_dialog.getSaveFileName(self, caption="Please select save directory",
+                                                                 filter='File Type (*.qdmf)|*.qdmf|')[0]
+            else:
+                save_path = self.saveQdmfPath
+            with open(save_path, 'w', encoding='utf-8') as f_write:
+                js_str = '{ "ItemCount":"' + str(len(self.allLink)) + '","Item":['
+                for item in self.allLink:
+                    js_str += '{"FileName":"' + item['FileName'] + '",'
+                    js_str += '"FileLink":"' + item['FileLink'] + '",'
+                    js_str += '"BaseLink":"' + item['BaseLink'] + '",'
+                    js_str += '"CombMode":"' + item['CombMode'] + '"},'
+                js_str += ']}'
+                js_str = js_str.replace(',]}', ']}')
+                f_write.write(js_str)
+                win32api.MessageBox(0, 'Save success!', "Information", win32con.MB_ICONINFORMATION, win32con.MB_OK)
+        except Exception as msg:
+            win32api.MessageBox(0, str(msg), "Error", win32con.MB_ICONERROR, win32con.MB_OK)
+
+
 
     #列表单击事件
     def ListView_Click(self,qModelIndex):

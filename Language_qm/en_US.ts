@@ -304,6 +304,11 @@
         <source>More Task</source>
         <translation>More Task</translation>
     </message>
+	<message>
+        <location filename="Form/BatchDownWin/BatchDownUi.py" line="133"/>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
 </context>
 <context>
     <name>ConvertWindow</name>

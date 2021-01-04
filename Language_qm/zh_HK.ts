@@ -304,6 +304,11 @@
         <source>More Task</source>
         <translation>多任務下載</translation>
     </message>
+	<message>
+        <location filename="Form/BatchDownWin/BatchDownUi.py" line="133"/>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
 </context>
 <context>
     <name>ConvertWindow</name>

@@ -98,8 +98,11 @@ class Ui_BatDownWindow(object):
         self.actionList_Save_As.setObjectName("actionList_Save_As")
         self.actionImport_List = QtWidgets.QAction(BatDownWindow)
         self.actionImport_List.setObjectName("actionImport_List")
+        self.actionSave = QtWidgets.QAction(BatDownWindow)
+        self.actionSave.setObjectName("actionSave")
         self.menuOperation.addAction(self.actionList_Save_As)
         self.menuOperation.addAction(self.actionImport_List)
+        self.menuOperation.addAction(self.actionSave)
         self.menubar.addAction(self.menuOperation.menuAction())
 
         self.retranslateUi(BatDownWindow)
@@ -127,3 +130,4 @@ class Ui_BatDownWindow(object):
         self.menuOperation.setTitle(_translate("BatDownWindow", "Operation"))
         self.actionList_Save_As.setText(_translate("BatDownWindow", "List Save As"))
         self.actionImport_List.setText(_translate("BatDownWindow", "Import List"))
+        self.actionSave.setText(_translate("BatDownWindow", "Save"))
