@@ -260,18 +260,19 @@ class BatchDownWindow(QtWidgets.QMainWindow, Ui_BatDownWindow):
         if len(self.saveFolderPath)>0:
             for item in self.allLink:
                 item['FileName'] = self.saveFolderPath.replace('/','\\')+'\\'+item['FileName']
+            task_count = 0
             if self.cbSwTask.isChecked():
                 task_count = self.cboTaskCount.currentIndex()+1
-                self.mainWin.DownloadAllLink(self.allLink,1,task_count) #多任务进行
             else:
-                if self.rb1.isChecked():
-                    self.mainWin.DownloadAllLink(self.allLink,1,0)   #弹出下载框-M3u8
-                elif self.rb2.isChecked():
-                    self.mainWin.DownloadAllLink(self.allLink, 2,0)  # 弹出下载框-单线程
-                elif self.rb3.isChecked():
-                    self.mainWin.DownloadAllLink(self.allLink, 3,0)  # 弹出下载框-多线程
-                else:
-                    self.mainWin.DownloadAllLink(self.allLink, 1,0)  # 弹出下载框-M3u8
+                task_count = 0
+            if self.rb1.isChecked():
+                self.mainWin.DownloadAllLink(self.allLink,1,task_count) #多任务进行
+            elif self.rb2.isChecked():
+                self.mainWin.DownloadAllLink(self.allLink, 2, task_count)  # 弹出下载框-单线程
+            elif self.rb3.isChecked():
+                self.mainWin.DownloadAllLink(self.allLink, 3, task_count)  # 弹出下载框-多线程
+            else:
+                self.mainWin.DownloadAllLink(self.allLink, 1, task_count)  # 弹出下载框-M3u8
 
 
 

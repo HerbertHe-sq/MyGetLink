@@ -4,22 +4,16 @@
     <list default="true" id="ea9a20ae-cead-4fc3-a101-1436a301e0b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Form/BatchDownWin/BatchDownFrm.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/BatchDownWin/BatchDownFrm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/BatchDownWin/BatchDownUi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/BatchDownWin/BatchDownUi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/BatchDownWin/BatchDownUi.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Form/BatchDownWin/BatchDownUi.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/BatchDownWin/zh_CN.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Form/BatchDownWin/zh_CN.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language/en_US.qm" beforeDir="false" afterPath="$PROJECT_DIR$/Language/en_US.qm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language/zh_CN.qm" beforeDir="false" afterPath="$PROJECT_DIR$/Language/zh_CN.qm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language/zh_HK.qm" beforeDir="false" afterPath="$PROJECT_DIR$/Language/zh_HK.qm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language_qm/en_US.qm" beforeDir="false" afterPath="$PROJECT_DIR$/Language_qm/en_US.qm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language_qm/en_US.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Language_qm/en_US.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language_qm/zh_CN.qm" beforeDir="false" afterPath="$PROJECT_DIR$/Language_qm/zh_CN.qm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language_qm/zh_CN.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Language_qm/zh_CN.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language_qm/zh_HK.qm" beforeDir="false" afterPath="$PROJECT_DIR$/Language_qm/zh_HK.qm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Language_qm/zh_HK.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Language_qm/zh_HK.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SetInit.ini" beforeDir="false" afterPath="$PROJECT_DIR$/SetInit.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Language/en_US.qm" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Language/en_US.qm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Language/zh_CN.qm" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Language/zh_CN.qm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Language/zh_HK.qm" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Language/zh_HK.qm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/MyApp/warn-MyApp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/MyApp/warn-MyApp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MyApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/MyApp.exe" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
